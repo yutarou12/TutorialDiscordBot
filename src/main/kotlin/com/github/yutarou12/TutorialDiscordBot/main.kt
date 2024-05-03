@@ -52,5 +52,5 @@ class BotClient : ListenerAdapter(){
 
 fun main() {
     val bot = BotClient()
-    bot.main("MTIzNTc4NTQ0NDMyNzY4NjIwNg.GwwhMO.GbZbITAZbPIjHOA_MwAGKBRw2oMf_a9dDYz-TQ")
+    bot.main("")
 }
