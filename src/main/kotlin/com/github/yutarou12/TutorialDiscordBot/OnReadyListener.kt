@@ -13,7 +13,8 @@ class OnReadyListener() : ListenerAdapter() {
             "neko" to "ねこおおおおお",
             "inu" to "いぬううううう",
             "pengin" to "ぺんぎんん",
-            "チャンネル情報" to "チャンネル情報を取得するよ！！！"
+            "チャンネル情報" to "チャンネル情報を取得するよ！！！",
+            "オールマイティ" to "なにもかもできるコマンド。それがオールマイティ"
         )
         val registCmd: MutableCollection<SlashCommandData> = mutableListOf()
         for ((key, value) in cmdList){
@@ -21,6 +22,11 @@ class OnReadyListener() : ListenerAdapter() {
             if (key == "チャンネル情報"){
                 registerCommand = Commands.slash(key, value)
                     .addOption(OptionType.CHANNEL, "チャンネル", "チャンネルを選択してね")
+            } else if (key == "オールマイティ"){
+                registerCommand = Commands.slash(key, value)
+                    .addOption(OptionType.INTEGER, "a-1", "A-!")
+                    .addOption(OptionType.INTEGER, "b-1", "B-!")
+                    .addOption(OptionType.INTEGER, "c-1", "C-!")
             } else {
                 registerCommand = Commands.slash(key, value)
             }
